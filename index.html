@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Crypto Price Checker</h1>
+
+        <label for="crypto_symbol">Cryptocurrency Symbol (e.g., BTC, ETH):</label>
+        <input type="text" id="crypto_symbol" name="crypto_symbol" required>
+
+        <label for="amount">Amount Owned:</label>
+        <input type="number" id="amount" name="amount" step="any" required>
+
+        <label for="currency">Preferred Currency (e.g., USD, EUR):</label>
+        <select id="currency" name="currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <!-- Add more currencies as needed -->
+        </select>
+
+        <button onclick="calculateValue()">Calculate Value</button>
+
+        <div id="result">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
